@@ -1,0 +1,17 @@
+# this is the file used to deploy on Portainer
+# or other more permanent hosting solutions
+version: "3.7"
+
+services:
+  myapp:
+    container_name: toolbox
+    image: toolbox:latest
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - "app_data:/var/app_data"
+
+volumes:
+  app_data:
+  
